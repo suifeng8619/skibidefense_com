@@ -12,10 +12,16 @@ export type Rarity =
   | "Epic"
   | "Rare"
   | "Uncommon"
-  | "Common";
+  | "Common"
+  | "Grandmaster"
+  | "Evolution"
+  | "Cosmics"
+  | "Cosmic"
+  | "ASTRAL"
+  | "Divine";
 
 export type Demand = "Very High" | "High" | "Normal" | "Low";
-export type Trend = "Rising" | "Slowly Rising" | "Stable" | "Dropping" | "Unstable";
+export type Trend = "Rising" | "Slowly Rising" | "Stable" | "Dropping" | "Unstable" | "Overpaid" | "Underpaid";
 
 export type Unit = {
   id: string;

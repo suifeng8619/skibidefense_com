@@ -53,6 +53,17 @@ export function getRarityColor(rarity: Rarity | string): string {
       return "text-green-400 border-green-500 bg-green-500/10";
     case "Common":
       return "text-gray-400 border-gray-500 bg-gray-500/10";
+    case "Grandmaster":
+      return "text-rose-400 border-rose-500 bg-rose-500/10";
+    case "Evolution":
+      return "text-indigo-400 border-indigo-500 bg-indigo-500/10";
+    case "Cosmics":
+    case "Cosmic":
+      return "text-purple-400 border-purple-500 bg-purple-500/10";
+    case "ASTRAL":
+      return "text-blue-300 border-blue-400 bg-blue-400/10";
+    case "Divine":
+      return "text-amber-300 border-amber-400 bg-amber-400/10";
     default:
       return "text-gray-400 border-gray-500 bg-gray-500/10";
   }
@@ -88,6 +99,17 @@ export function getRarityBgColor(rarity: Rarity | string): string {
       return "bg-gradient-to-r from-green-600 to-green-400";
     case "Common":
       return "bg-gradient-to-r from-gray-600 to-gray-400";
+    case "Grandmaster":
+      return "bg-gradient-to-r from-rose-600 to-rose-400";
+    case "Evolution":
+      return "bg-gradient-to-r from-indigo-600 to-indigo-400";
+    case "Cosmics":
+    case "Cosmic":
+      return "bg-gradient-to-r from-purple-600 to-purple-400";
+    case "ASTRAL":
+      return "bg-gradient-to-r from-blue-500 to-blue-300";
+    case "Divine":
+      return "bg-gradient-to-r from-amber-500 to-amber-300";
     default:
       return "bg-gradient-to-r from-gray-600 to-gray-400";
   }
@@ -120,6 +142,10 @@ export function getTrendIcon(trend: string): { icon: string; color: string } {
       return { icon: "↓", color: "text-red-400" };
     case "Unstable":
       return { icon: "↕", color: "text-yellow-400" };
+    case "Overpaid":
+      return { icon: "💰", color: "text-green-300" };
+    case "Underpaid":
+      return { icon: "📉", color: "text-orange-400" };
     default:
       return { icon: "→", color: "text-gray-400" };
   }
@@ -134,7 +160,13 @@ export function getDemandScoreColor(score: number): string {
 }
 
 export const RARITY_ORDER: Rarity[] = [
+  "ASTRAL",
+  "Cosmic",
+  "Cosmics",
+  "Grandmaster",
+  "Evolution",
   "Diamond",
+  "Divine",
   "Godly",
   "Cursed",
   "Secret",
