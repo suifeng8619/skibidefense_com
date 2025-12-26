@@ -181,36 +181,38 @@ export function TradeCalculator({ units }: TradeCalculatorProps) {
       </Card>
 
       {/* Offer Columns */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <OfferColumn
-          title="Your Offer"
-          items={yourOffer}
-          total={yourTotal}
-          column="your"
-        />
+      <div className="relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+          <OfferColumn
+            title="Your Offer"
+            items={yourOffer}
+            total={yourTotal}
+            column="your"
+          />
+
+          {/* Mobile Divider */}
+          <div className="flex lg:hidden items-center justify-center py-2">
+            <div className="flex-1 border-t border-border" />
+            <div className="px-4">
+              <ArrowLeftRight className="h-5 w-5 text-muted-foreground rotate-90" />
+            </div>
+            <div className="flex-1 border-t border-border" />
+          </div>
+
+          <OfferColumn
+            title="Their Offer"
+            items={theirOffer}
+            total={theirTotal}
+            column="their"
+          />
+        </div>
 
         {/* Center Arrow - Desktop Only */}
-        <div className="hidden lg:flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <div className="bg-card p-2 rounded-full border border-border">
+        <div className="hidden lg:flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div className="bg-card p-2 rounded-full border border-border shadow-lg">
             <ArrowLeftRight className="h-5 w-5 text-muted-foreground" />
           </div>
         </div>
-
-        {/* Mobile Divider */}
-        <div className="flex lg:hidden items-center justify-center py-2">
-          <div className="flex-1 border-t border-border" />
-          <div className="px-4">
-            <ArrowLeftRight className="h-5 w-5 text-muted-foreground rotate-90" />
-          </div>
-          <div className="flex-1 border-t border-border" />
-        </div>
-
-        <OfferColumn
-          title="Their Offer"
-          items={theirOffer}
-          total={theirTotal}
-          column="their"
-        />
       </div>
 
       {/* Clear Button */}

@@ -29,14 +29,34 @@ export async function generateMetadata({ params }: UnitPageProps): Promise<Metad
   }
 
   const gameName = unit.game === "skibi-defense" ? "Skibi Defense" : "Toilet Tower Defense";
+  const title = `${unit.name} Value - ${gameName} Unit Price & Stats`;
+  const description = `${unit.name} Skibi Defense value: ${formatValue(unit.value)} Gems. Check ${unit.name} demand, trading trends, shiny value, and stats in our Skibi Defense value list.`;
 
   return {
-    title: `${unit.name} Value & Stats`,
-    description: `${unit.name} is worth ${formatValue(unit.value)} Gems in ${gameName}. Check current value, demand, and trading trends.`,
+    title,
+    description,
+    keywords: [
+      unit.name,
+      `${unit.name} value`,
+      `${unit.name} Skibi Defense`,
+      `Skibi Defense ${unit.name}`,
+      `${unit.name} price`,
+      `${unit.rarity} unit Skibi Defense`,
+      "Skibi Defense value list",
+      "Skibi Defense trading",
+    ],
     openGraph: {
-      title: `${unit.name} Value & Stats - ${gameName}`,
-      description: `${unit.name} is worth ${formatValue(unit.value)} Gems in ${gameName}. Check current value, demand, and trading trends.`,
+      title,
+      description,
+      url: `https://skibidefense.com/units/${slug}`,
       images: [unit.image],
+    },
+    twitter: {
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `https://skibidefense.com/units/${slug}`,
     },
   };
 }
@@ -94,11 +114,11 @@ export default async function UnitPage({ params }: UnitPageProps) {
         {/* Right Column - Details */}
         <div className="space-y-6">
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              {unit.name}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">
+              {unit.name} - Skibi Defense Value
             </h1>
-            <p className="text-muted-foreground">
-              {gameName} • {unit.obtainedFrom}
+            <p className="text-sm md:text-base text-muted-foreground">
+              {gameName} Unit • {unit.obtainedFrom}
             </p>
           </div>
 
@@ -234,30 +254,36 @@ export default async function UnitPage({ params }: UnitPageProps) {
       </div>
 
       {/* SEO Content */}
-      <section className="mt-16 max-w-2xl">
-        <h2 className="text-xl font-bold text-foreground mb-4">
-          About {unit.name}
+      <section className="mt-12 md:mt-16 max-w-2xl">
+        <h2 className="text-lg md:text-xl font-bold text-foreground mb-4">
+          About {unit.name} in Skibi Defense
         </h2>
-        <p className="text-muted-foreground mb-4">
-          {unit.name} is a {unit.rarity.toLowerCase()} rarity unit in {gameName}
-          with a current trading value of {unit.value.toLocaleString()} Gems.
-          This unit has {unit.demand.toLowerCase()} demand in the trading community
-          and the price is currently {unit.trend.toLowerCase()}.
-          It can be obtained from {unit.obtainedFrom}.
-        </p>
-        {unit.traits && unit.traits.length > 0 && (
-          <p className="text-muted-foreground mb-4">
-            This unit has the following traits: {unit.traits.join(", ")}.
-            {unit.dps && ` It deals ${unit.dps} DPS in battle.`}
+        <div className="text-sm md:text-base text-muted-foreground space-y-4">
+          <p>
+            {unit.name} is a {unit.rarity.toLowerCase()} rarity unit in Skibi Defense
+            with a current Skibi Defense trading value of {unit.value.toLocaleString()} Gems.
+            This Skibi Defense unit has {unit.demand.toLowerCase()} demand in the trading community
+            and the Skibi Defense price is currently {unit.trend.toLowerCase()}.
+            It can be obtained from {unit.obtainedFrom} in Skibi Defense.
           </p>
-        )}
-        {unit.shinyValue && (
-          <p className="text-muted-foreground">
-            The shiny variant of {unit.name} is worth {unit.shinyValue.toLocaleString()} Gems,
-            which is {Math.round((unit.shinyValue / unit.value) * 100)}% more valuable than the normal version.
-            {unit.shinyExists && ` Only ${unit.shinyExists.toLocaleString()} shiny versions exist.`}
+          {unit.traits && unit.traits.length > 0 && (
+            <p>
+              This Skibi Defense unit has the following traits: {unit.traits.join(", ")}.
+              {unit.dps && ` ${unit.name} deals ${unit.dps} DPS in Skibi Defense battles.`}
+            </p>
+          )}
+          {unit.shinyValue && (
+            <p>
+              The shiny variant of {unit.name} in Skibi Defense is worth {unit.shinyValue.toLocaleString()} Gems,
+              which is {Math.round((unit.shinyValue / unit.value) * 100)}% more valuable than the normal version.
+              {unit.shinyExists && ` Only ${unit.shinyExists.toLocaleString()} shiny Skibi Defense versions exist.`}
+            </p>
+          )}
+          <p>
+            Use our Skibi Defense trade calculator to compare {unit.name} trades.
+            Check the Skibi Defense value list for more unit prices.
           </p>
-        )}
+        </div>
       </section>
     </div>
   );

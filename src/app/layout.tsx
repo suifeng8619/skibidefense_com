@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://skibidefense.com",
-    siteName: "SkibiValues",
+    siteName: "Skibi Defense Value List",
     title: "Skibi Defense Value List & Trade Calculator 2025",
     description:
       "The most accurate Skibi Defense value list and trade calculator. Check unit prices in gems and avoid scams.",
@@ -68,6 +69,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          defer
+          data-domain="skibidefense.com"
+          src="https://stats.toolifybox.com/js/script.file-downloads.outbound-links.js"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
