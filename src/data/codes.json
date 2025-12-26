@@ -1,0 +1,92 @@
+[
+  {
+    "code": "SKIBIDEFENSE2025",
+    "reward": "500 Gems + 1 Rare Crate",
+    "status": "active",
+    "addedDate": "2025-01-01"
+  },
+  {
+    "code": "HAPPYNEWYEAR",
+    "reward": "1000 Gems",
+    "status": "active",
+    "addedDate": "2025-01-01"
+  },
+  {
+    "code": "CHRISTMAS2024",
+    "reward": "Christmas Crate + 300 Gems",
+    "status": "active",
+    "addedDate": "2024-12-25"
+  },
+  {
+    "code": "WINTERUPDATE",
+    "reward": "500 Gems + 2x XP Boost",
+    "status": "active",
+    "addedDate": "2024-12-20"
+  },
+  {
+    "code": "TITANPOWER",
+    "reward": "Titan Crate Fragment x3",
+    "status": "active",
+    "addedDate": "2024-12-15"
+  },
+  {
+    "code": "FREEGEMS500",
+    "reward": "500 Gems",
+    "status": "active",
+    "addedDate": "2024-12-10"
+  },
+  {
+    "code": "CLOCKWORK",
+    "reward": "Clockwork Crate + 200 Gems",
+    "status": "active",
+    "addedDate": "2024-12-05"
+  },
+  {
+    "code": "SKIBI100K",
+    "reward": "1000 Gems + Exclusive Badge",
+    "status": "active",
+    "addedDate": "2024-11-28"
+  },
+  {
+    "code": "THANKSFORPLAYING",
+    "reward": "300 Gems + Lucky Charm",
+    "status": "active",
+    "addedDate": "2024-11-20"
+  },
+  {
+    "code": "TTDCOLLAB",
+    "reward": "TTD Crossover Crate",
+    "status": "active",
+    "addedDate": "2024-11-15"
+  },
+  {
+    "code": "HALLOWEEN2024",
+    "reward": "Cursed Crate + 500 Gems",
+    "status": "expired",
+    "addedDate": "2024-10-31"
+  },
+  {
+    "code": "SPOOKYSEASON",
+    "reward": "Halloween Badge + 300 Gems",
+    "status": "expired",
+    "addedDate": "2024-10-25"
+  },
+  {
+    "code": "RELEASE",
+    "reward": "500 Gems + Starter Pack",
+    "status": "expired",
+    "addedDate": "2024-09-01"
+  },
+  {
+    "code": "BETATESTERS",
+    "reward": "Exclusive Beta Badge",
+    "status": "expired",
+    "addedDate": "2024-08-15"
+  },
+  {
+    "code": "SUMMER2024",
+    "reward": "Summer Crate + 400 Gems",
+    "status": "expired",
+    "addedDate": "2024-07-01"
+  }
+]

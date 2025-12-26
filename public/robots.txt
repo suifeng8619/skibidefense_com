@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://skibidefense.com
+
+# Sitemaps
+Sitemap: https://skibidefense.com/sitemap.xml

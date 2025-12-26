@@ -1,65 +1,70 @@
-import Image from "next/image";
+import { UnitList } from "@/components/unit-list";
+import { getUnits } from "@/lib/units";
 
-export default function Home() {
+export default function HomePage() {
+  const units = getUnits();
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="container mx-auto px-4 py-8">
+      {/* Hero/Header Section */}
+      <header className="mb-8 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+          Skibi Defense Value List {currentYear}
+        </h1>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          The most accurate and up-to-date trading values for all Skibi Defense
+          units. Click any value to copy it to your clipboard for easy trading.
+        </p>
+      </header>
+
+      {/* Value List */}
+      <section>
+        <UnitList units={units} />
+      </section>
+
+      {/* SEO Content Section */}
+      <section className="mt-16 prose prose-invert max-w-none">
+        <h2 className="text-2xl font-bold text-foreground mb-4">
+          About Skibi Defense Trading Values
+        </h2>
+        <div className="text-muted-foreground space-y-4">
+          <p>
+            Our Skibi Defense value list is updated regularly to reflect the
+            current trading market. Values are based on community trading data
+            and demand trends.
           </p>
+          <p>
+            Use our{" "}
+            <a href="/calculator" className="text-yellow-400 hover:underline">
+              Trade Calculator
+            </a>{" "}
+            to compare offers and ensure you&apos;re getting fair trades. Never
+            get scammed again!
+          </p>
+          <h3 className="text-xl font-semibold text-foreground mt-6">
+            Understanding Rarity Tiers
+          </h3>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              <span className="text-red-400 font-medium">Secret</span> - The
+              rarest units from limited events
+            </li>
+            <li>
+              <span className="text-yellow-400 font-medium">Godly</span> - Top
+              tier units with high demand
+            </li>
+            <li>
+              <span className="text-purple-400 font-medium">Mythic</span> -
+              Powerful units from mythic crates
+            </li>
+            <li>
+              <span className="text-orange-400 font-medium">Legendary</span> -
+              Common but valuable units
+            </li>
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
   );
 }

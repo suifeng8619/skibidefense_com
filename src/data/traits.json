@@ -1,0 +1,178 @@
+[
+  {
+    "id": "clockwork",
+    "name": "Clockwork",
+    "nameCN": "时钟",
+    "demand": "Very High",
+    "demandScore": 10,
+    "trend": "Stable"
+  },
+  {
+    "id": "titan",
+    "name": "Titan",
+    "nameCN": "泰坦",
+    "demand": "Very High",
+    "demandScore": 9,
+    "trend": "Stable"
+  },
+  {
+    "id": "g-man",
+    "name": "G-Man",
+    "nameCN": "G-Man",
+    "demand": "High",
+    "demandScore": 8,
+    "trend": "Rising"
+  },
+  {
+    "id": "cameraman",
+    "name": "Cameraman",
+    "nameCN": "相机人",
+    "demand": "Normal",
+    "demandScore": 5,
+    "trend": "Stable"
+  },
+  {
+    "id": "speaker",
+    "name": "Speaker",
+    "nameCN": "扬声器",
+    "demand": "Normal",
+    "demandScore": 5,
+    "trend": "Stable"
+  },
+  {
+    "id": "tv",
+    "name": "TV",
+    "nameCN": "电视人",
+    "demand": "Normal",
+    "demandScore": 5,
+    "trend": "Stable"
+  },
+  {
+    "id": "cursed",
+    "name": "Cursed",
+    "nameCN": "诅咒",
+    "demand": "Very High",
+    "demandScore": 9,
+    "trend": "Rising"
+  },
+  {
+    "id": "upgraded",
+    "name": "Upgraded",
+    "nameCN": "升级版",
+    "demand": "High",
+    "demandScore": 7,
+    "trend": "Stable"
+  },
+  {
+    "id": "astro",
+    "name": "Astro",
+    "nameCN": "宇航员",
+    "demand": "High",
+    "demandScore": 7,
+    "trend": "Slowly Rising"
+  },
+  {
+    "id": "void",
+    "name": "Void",
+    "nameCN": "虚空",
+    "demand": "Very High",
+    "demandScore": 9,
+    "trend": "Rising"
+  },
+  {
+    "id": "warlord",
+    "name": "Warlord",
+    "nameCN": "战争领主",
+    "demand": "Very High",
+    "demandScore": 10,
+    "trend": "Rising"
+  },
+  {
+    "id": "dominus",
+    "name": "Dominus",
+    "nameCN": "统治者",
+    "demand": "Very High",
+    "demandScore": 10,
+    "trend": "Stable"
+  },
+  {
+    "id": "guardian",
+    "name": "Guardian",
+    "nameCN": "守护者",
+    "demand": "High",
+    "demandScore": 8,
+    "trend": "Stable"
+  },
+  {
+    "id": "striker",
+    "name": "Striker",
+    "nameCN": "突击者",
+    "demand": "High",
+    "demandScore": 7,
+    "trend": "Slowly Rising"
+  },
+  {
+    "id": "drill",
+    "name": "Drill",
+    "nameCN": "钻机",
+    "demand": "Normal",
+    "demandScore": 6,
+    "trend": "Stable"
+  },
+  {
+    "id": "scientist",
+    "name": "Scientist",
+    "nameCN": "科学家",
+    "demand": "High",
+    "demandScore": 7,
+    "trend": "Stable"
+  },
+  {
+    "id": "large",
+    "name": "Large",
+    "nameCN": "大型",
+    "demand": "Normal",
+    "demandScore": 4,
+    "trend": "Dropping"
+  },
+  {
+    "id": "support",
+    "name": "Support",
+    "nameCN": "支援",
+    "demand": "Normal",
+    "demandScore": 5,
+    "trend": "Stable"
+  },
+  {
+    "id": "tank",
+    "name": "Tank",
+    "nameCN": "坦克",
+    "demand": "High",
+    "demandScore": 7,
+    "trend": "Stable"
+  },
+  {
+    "id": "anime",
+    "name": "Anime",
+    "nameCN": "动漫",
+    "demand": "Very High",
+    "demandScore": 9,
+    "trend": "Rising"
+  },
+  {
+    "id": "christmas",
+    "name": "Christmas",
+    "nameCN": "圣诞节",
+    "demand": "High",
+    "demandScore": 8,
+    "trend": "Rising"
+  },
+  {
+    "id": "halloween",
+    "name": "Halloween",
+    "nameCN": "万圣节",
+    "demand": "High",
+    "demandScore": 7,
+    "trend": "Stable"
+  }
+]
