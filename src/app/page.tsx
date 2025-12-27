@@ -5,32 +5,32 @@ import { UnitList } from "@/components/unit-list";
 import { getUnits } from "@/lib/units";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Shield, Calculator, Gift, Zap, Users, Star, Clock } from "lucide-react";
+import { TrendingUp, Shield, Calculator, Gift, Users, Star, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Skibi Defense Value List 2025 - Unit Prices & Trade Calculator",
+  title: "Skibi Defense Hub - Wiki, Calculator & Game Guides",
   description:
-    "Skibi Defense value list with accurate unit prices in gems. Use our Skibi Defense trade calculator to check fair trades. Updated daily Skibi Defense trading values for all rarities.",
+    "Your complete Skibi Defense resource hub. Explore our wiki, use the trade calculator, find working codes, and master the game with expert guides. Updated daily for Roblox players.",
   keywords: [
     "Skibi Defense",
-    "Skibi Defense value list",
-    "Skibi Defense trade calculator",
-    "Skibi Defense unit values",
-    "Skibi Defense trading",
-    "Skibi Defense gems",
-    "Skibi Defense prices",
+    "Skibi Defense wiki",
+    "Skibi Defense calculator",
+    "Skibi Defense guide",
+    "Skibi Defense codes",
+    "Skibi Defense units",
+    "Skibi Defense tools",
     "Roblox Skibi Defense",
   ],
   openGraph: {
-    title: "Skibi Defense Value List 2025 - Unit Prices & Trade Calculator",
+    title: "Skibi Defense Hub - Wiki, Calculator & Game Guides",
     description:
-      "The most accurate Skibi Defense value list. Check Skibi Defense unit prices and use our trade calculator. Updated daily.",
+      "Your complete Skibi Defense resource hub. Wiki, trade calculator, codes, and expert guides for Roblox players.",
     url: "https://skibidefense.com",
   },
   twitter: {
-    title: "Skibi Defense Value List 2025 - Unit Prices & Trade Calculator",
+    title: "Skibi Defense Hub - Wiki, Calculator & Game Guides",
     description:
-      "The most accurate Skibi Defense value list. Check Skibi Defense unit prices and use our trade calculator.",
+      "Your complete Skibi Defense resource hub. Wiki, trade calculator, codes, and expert guides for Roblox players.",
   },
   alternates: {
     canonical: "https://skibidefense.com",
@@ -62,7 +62,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         "name": "How often is the Skibi Defense value list updated?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our Skibi Defense value list is updated daily based on current trading data. Skibi Defense unit prices reflect the latest market trends."
+          "text": "Our Skibi Defense value list is updated daily based on current trading data. Unit prices reflect the latest market trends."
         }
       },
       {
@@ -70,7 +70,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         "name": "How do I use the Skibi Defense trade calculator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Add Skibi Defense units to both sides of the calculator. It will show if the Skibi Defense trade is fair, a win, or a loss for you."
+          "text": "Add units to both sides of the calculator. It will show if the trade is fair, a win, or a loss for you."
         }
       },
       {
@@ -78,7 +78,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         "name": "What makes Skibi Defense units valuable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Skibi Defense unit value depends on rarity, demand, and availability. Limited Skibi Defense event units and low-exist counts increase value."
+          "text": "Unit value depends on rarity, demand, and availability. Limited event units and low-exist counts increase value."
         }
       },
       {
@@ -86,7 +86,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         "name": "Are Skibi Defense codes still working?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We maintain an updated list of working Skibi Defense codes. Check our Skibi Defense codes page for active codes and free rewards."
+          "text": "We maintain an updated list of working Skibi Defense codes. Check our codes page for active codes and free rewards."
         }
       }
     ]
@@ -114,8 +114,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-3xl mx-auto px-4">
               The most accurate and trusted Skibi Defense value list for Roblox players.
-              Check current Skibi Defense unit prices, compare trades with our calculator,
-              and never get scammed in Skibi Defense trading again.
+              Check current unit prices, compare trades with our Skibi Defense calculator,
+              and never get scammed again.
             </p>
 
             {/* Quick Stats */}
@@ -123,7 +123,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               <Card className="bg-card/50 border-border">
                 <CardContent className="p-3 md:p-4 text-center">
                   <div className="text-2xl md:text-3xl font-bold text-yellow-400">{units.length}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Total Units</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Skibi Defense Units</div>
                 </CardContent>
               </Card>
               <Card className="bg-card/50 border-border">
@@ -141,7 +141,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               <Card className="bg-card/50 border-border">
                 <CardContent className="p-3 md:p-4 text-center">
                   <div className="text-2xl md:text-3xl font-bold text-green-400">Daily</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Updates</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Skibi Defense Updates</div>
                 </CardContent>
               </Card>
             </div>
@@ -175,7 +175,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               Skibi Defense Unit Values
             </h2>
             <p className="text-sm text-muted-foreground mt-1">
-              Complete Skibi Defense price list with demand and trend data
+              Complete price list with demand and trend data
             </p>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 <div className="inline-flex items-center justify-center p-3 bg-green-500/20 rounded-full mb-4">
                   <TrendingUp className="h-6 w-6 text-green-400" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Trend Tracking</h3>
+                <h3 className="font-semibold text-foreground mb-2">Skibi Defense Trend Tracking</h3>
                 <p className="text-sm text-muted-foreground">
                   See which Skibi Defense units are rising or dropping in value
                 </p>
@@ -218,7 +218,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Scam Protection</h3>
                 <p className="text-sm text-muted-foreground">
-                  Avoid unfair Skibi Defense trades with accurate price data
+                  Avoid unfair trades with accurate Skibi Defense price data
                 </p>
               </CardContent>
             </Card>
@@ -227,9 +227,9 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 <div className="inline-flex items-center justify-center p-3 bg-purple-500/20 rounded-full mb-4">
                   <Users className="h-6 w-6 text-purple-400" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Community Data</h3>
+                <h3 className="font-semibold text-foreground mb-2">Skibi Defense Community Data</h3>
                 <p className="text-sm text-muted-foreground">
-                  Skibi Defense values based on community trading patterns
+                  Values based on Skibi Defense community trading patterns
                 </p>
               </CardContent>
             </Card>
@@ -243,78 +243,98 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           Skibi Defense Rarity Tiers Guide
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
-          <Card className="bg-cyan-500/10 border-cyan-500/30">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Star className="h-5 w-5 text-cyan-400" />
-                <span className="font-bold text-cyan-400">Diamond</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                The rarest Skibi Defense units. Diamond tier units like D UTCLM and D Gojo
-                are extremely valuable in Skibi Defense trading.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-yellow-500/10 border-yellow-500/30">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Star className="h-5 w-5 text-yellow-400" />
-                <span className="font-bold text-yellow-400">Godly</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                High-tier Skibi Defense units with strong demand. Godly units are
-                essential for competitive Skibi Defense gameplay.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-purple-900/20 border-purple-800/30">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Star className="h-5 w-5 text-purple-400" />
-                <span className="font-bold text-purple-400">Cursed</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Limited event Skibi Defense units from Halloween. Cursed units have
-                unique dark abilities in Skibi Defense.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-red-500/10 border-red-500/30">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Star className="h-5 w-5 text-red-400" />
-                <span className="font-bold text-red-400">Secret</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Hidden Skibi Defense units obtained from special methods. Secret units
-                are highly sought after by Skibi Defense collectors.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-pink-500/10 border-pink-500/30">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Star className="h-5 w-5 text-pink-400" />
-                <span className="font-bold text-pink-400">Event</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Seasonal Skibi Defense units from holiday events. Event units increase
-                in value when Skibi Defense events end.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-fuchsia-500/10 border-fuchsia-500/30">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Star className="h-5 w-5 text-fuchsia-400" />
-                <span className="font-bold text-fuchsia-400">Mythic</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Powerful Skibi Defense units from mythic crates. Great starting point
-                for Skibi Defense traders building collections.
-              </p>
-            </CardContent>
-          </Card>
+          <Link href="/rarity/diamond">
+            <Card className="bg-cyan-500/10 border-cyan-500/30 hover:scale-[1.02] transition-transform">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Star className="h-5 w-5 text-cyan-400" />
+                  <span className="font-bold text-cyan-400">Diamond</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  The rarest Skibi Defense units. Diamond tier units like D UTCLM and D Gojo
+                  are extremely valuable in trading.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/rarity/godly">
+            <Card className="bg-yellow-500/10 border-yellow-500/30 hover:scale-[1.02] transition-transform">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Star className="h-5 w-5 text-yellow-400" />
+                  <span className="font-bold text-yellow-400">Godly</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  High-tier Skibi Defense units with strong demand. Essential for competitive
+                  gameplay and valuable in trades.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/rarity/cursed">
+            <Card className="bg-purple-900/20 border-purple-800/30 hover:scale-[1.02] transition-transform">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Star className="h-5 w-5 text-purple-400" />
+                  <span className="font-bold text-purple-400">Cursed</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Limited Skibi Defense event units from Halloween. Cursed units have
+                  unique dark abilities.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/rarity/secret">
+            <Card className="bg-red-500/10 border-red-500/30 hover:scale-[1.02] transition-transform">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Star className="h-5 w-5 text-red-400" />
+                  <span className="font-bold text-red-400">Secret</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Hidden Skibi Defense units obtained from special methods. Highly sought
+                  after by collectors.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/rarity/event">
+            <Card className="bg-pink-500/10 border-pink-500/30 hover:scale-[1.02] transition-transform">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Star className="h-5 w-5 text-pink-400" />
+                  <span className="font-bold text-pink-400">Event</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Seasonal Skibi Defense units from holiday events. These units increase
+                  in value after events end.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/rarity/mythic">
+            <Card className="bg-fuchsia-500/10 border-fuchsia-500/30 hover:scale-[1.02] transition-transform">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Star className="h-5 w-5 text-fuchsia-400" />
+                  <span className="font-bold text-fuchsia-400">Mythic</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Powerful Skibi Defense units from mythic crates. Great starting point
+                  for traders building collections.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
+        <div className="text-center mt-6">
+          <Link
+            href="/rarity"
+            className="text-yellow-400 hover:underline text-sm"
+          >
+            View all rarity tiers →
+          </Link>
         </div>
       </section>
 
@@ -334,7 +354,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                   <h3 className="font-semibold text-foreground">Check Skibi Defense Values First</h3>
                   <p className="text-sm text-muted-foreground">
                     Always verify Skibi Defense unit values before accepting trades.
-                    Use our Skibi Defense value list to know exact prices.
+                    Use our value list to know exact prices.
                   </p>
                 </div>
               </div>
@@ -345,8 +365,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 <div>
                   <h3 className="font-semibold text-foreground">Use the Skibi Defense Calculator</h3>
                   <p className="text-sm text-muted-foreground">
-                    Our Skibi Defense trade calculator compares both sides instantly.
-                    Ensure fair Skibi Defense trades every time.
+                    Our <Link href="/calculator" className="text-yellow-400 hover:underline">trade calculator</Link> compares both sides instantly.
+                    Ensure fair trades every time.
                   </p>
                 </div>
               </div>
@@ -357,8 +377,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 <div>
                   <h3 className="font-semibold text-foreground">Watch Skibi Defense Trends</h3>
                   <p className="text-sm text-muted-foreground">
-                    Skibi Defense unit values change daily. Track rising units for
-                    potential profit in Skibi Defense trading.
+                    Unit values change daily. Track rising units for
+                    potential profit opportunities.
                   </p>
                 </div>
               </div>
@@ -372,7 +392,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                   <h3 className="font-semibold text-foreground">Consider Skibi Defense Demand</h3>
                   <p className="text-sm text-muted-foreground">
                     High demand Skibi Defense units sell faster. Check demand scores
-                    in our Skibi Defense value list.
+                    in our value list before trading.
                   </p>
                 </div>
               </div>
@@ -383,8 +403,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 <div>
                   <h3 className="font-semibold text-foreground">Know Skibi Defense Shiny Values</h3>
                   <p className="text-sm text-muted-foreground">
-                    Shiny Skibi Defense units are worth 3x more. Check shiny prices
-                    on unit detail pages.
+                    Skibi Defense shiny variants are worth significantly more. Check shiny prices
+                    on individual unit pages.
                   </p>
                 </div>
               </div>
@@ -395,12 +415,20 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 <div>
                   <h3 className="font-semibold text-foreground">Redeem Skibi Defense Codes</h3>
                   <p className="text-sm text-muted-foreground">
-                    Get free gems with our Skibi Defense codes page. Use gems to
-                    open crates for Skibi Defense units.
+                    Get free gems with our <Link href="/codes" className="text-yellow-400 hover:underline">Skibi Defense codes page</Link>. Use gems to
+                    open crates for new units.
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/trading-guide"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded-lg transition-colors"
+            >
+              Read Full Trading Guide →
+            </Link>
           </div>
         </div>
       </section>
@@ -418,7 +446,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               </h3>
               <p className="text-sm text-muted-foreground">
                 Our Skibi Defense value list is updated daily based on current trading data.
-                Skibi Defense unit prices reflect the latest market trends.
+                Unit prices reflect the latest market trends.
               </p>
             </CardContent>
           </Card>
@@ -428,8 +456,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 How do I use the Skibi Defense trade calculator?
               </h3>
               <p className="text-sm text-muted-foreground">
-                Add Skibi Defense units to both sides of the calculator. It will show if
-                the Skibi Defense trade is fair, a win, or a loss for you.
+                Add units to both sides of the calculator. It will instantly show if
+                the trade is fair, a win, or a loss for you.
               </p>
             </CardContent>
           </Card>
@@ -440,18 +468,19 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               </h3>
               <p className="text-sm text-muted-foreground">
                 Skibi Defense unit value depends on rarity, demand, and availability.
-                Limited Skibi Defense event units and low-exist counts increase value.
+                Limited event units and those with low exist counts are worth more.
               </p>
             </CardContent>
           </Card>
           <Card className="bg-card border-border">
             <CardContent className="p-4 md:p-6">
               <h3 className="font-semibold text-foreground mb-2">
-                Are Skibi Defense codes still working?
+                Are there working Skibi Defense codes?
               </h3>
               <p className="text-sm text-muted-foreground">
-                We maintain an updated list of working Skibi Defense codes. Check our
-                Skibi Defense codes page for active codes and free rewards.
+                Yes! We maintain an updated list of working Skibi Defense codes. Check our{" "}
+                <Link href="/codes" className="text-yellow-400 hover:underline">codes page</Link>{" "}
+                for active codes and free gem rewards.
               </p>
             </CardContent>
           </Card>
@@ -469,31 +498,26 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               <p>
                 Skibi Defense is one of the most popular tower defense games on Roblox,
                 featuring a unique unit collection and trading system. Our Skibi Defense
-                value list helps players understand the true worth of their Skibi Defense
-                units in the trading market.
+                value list helps players understand the true worth of their units.
               </p>
               <p>
                 The Skibi Defense economy is dynamic, with unit values changing based on
-                supply, demand, and new Skibi Defense updates. Diamond and Godly tier
-                Skibi Defense units command the highest prices, while event-exclusive
-                Skibi Defense units often appreciate over time.
+                supply, demand, and new updates. Diamond and Godly tier units command
+                the highest prices, while event-exclusive units often appreciate over time.
               </p>
               <p>
                 Whether you&apos;re a new Skibi Defense player or a veteran trader, our
-                Skibi Defense value list and trade calculator are essential tools. We
-                track Skibi Defense unit prices across all rarities, from common to
-                Diamond tier Skibi Defense units.
+                value list and{" "}
+                <Link href="/calculator" className="text-yellow-400 hover:underline">trade calculator</Link>{" "}
+                are essential tools. We track Skibi Defense unit prices across all rarities.
               </p>
               <p>
                 Our Skibi Defense database includes detailed information for each unit:
-                base value, shiny value, DPS stats, traits, and existence counts. This
-                comprehensive Skibi Defense data helps you make informed trading decisions.
+                base value, shiny value, DPS stats, traits, and existence counts.
               </p>
               <p>
-                Don&apos;t forget to check our Skibi Defense codes page for free gems and
-                crates. New Skibi Defense codes are released regularly during updates
-                and events. Bookmark our Skibi Defense value list to stay updated with
-                the latest prices and never miss a profitable Skibi Defense trade.
+                Don&apos;t forget to check our <Link href="/codes" className="text-yellow-400 hover:underline">Skibi Defense codes page</Link>{" "}
+                for free gems and crates. Bookmark our Skibi Defense value list to stay updated.
               </p>
             </div>
           </div>

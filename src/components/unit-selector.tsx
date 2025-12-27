@@ -60,6 +60,7 @@ export function UnitSelector({
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-10"
+            aria-label="Search units to add"
           />
         </div>
         <div className="flex-1 overflow-y-auto space-y-2 mt-2">

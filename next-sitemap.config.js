@@ -13,6 +13,11 @@ module.exports = {
         allow: '/',
       },
     ],
+    additionalSitemaps: [],
+    transformRobotsTxt: async (config, robotsTxt) => {
+      // Remove the Host directive (non-standard and can confuse some crawlers)
+      return robotsTxt.replace(/# Host\nHost:.*\n\n/g, '');
+    },
   },
   transform: async (config, path) => {
     // Homepage gets highest priority
