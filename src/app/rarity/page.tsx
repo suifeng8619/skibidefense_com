@@ -83,7 +83,7 @@ export default function RarityIndexPage() {
 
       {/* Rarity Grid */}
       <section className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {rarityStats.map((stat) => (
             <Link
               key={stat!.rarity}
@@ -148,7 +148,7 @@ export default function RarityIndexPage() {
       {/* SEO Content */}
       <section className="bg-card/30 py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-xl font-bold text-foreground mb-6 text-center">
               Understanding Skibi Defense Rarity System
             </h2>

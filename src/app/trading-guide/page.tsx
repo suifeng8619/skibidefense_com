@@ -59,7 +59,7 @@ export default function TradingGuidePage() {
 
       {/* Table of Contents */}
       <section className="container mx-auto px-4 py-8">
-        <Card className="max-w-2xl mx-auto bg-card border-border">
+        <Card className="max-w-5xl mx-auto bg-card border-border">
           <CardContent className="p-6">
             <h2 className="font-semibold text-foreground mb-4">Quick Navigation</h2>
             <nav className="grid sm:grid-cols-2 gap-2 text-sm">
@@ -88,7 +88,7 @@ export default function TradingGuidePage() {
 
       {/* Content Sections */}
       <section className="container mx-auto px-4 py-8">
-        <div className="max-w-3xl mx-auto space-y-12">
+        <div className="max-w-5xl mx-auto space-y-12">
 
           {/* Section 1: Basics */}
           <div id="basics">

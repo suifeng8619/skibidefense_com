@@ -76,7 +76,7 @@ export default function CalculatorPage() {
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-8 text-center">
             How to Use the Skibi Defense Trade Calculator
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
             <Card className="bg-card border-border">
               <CardContent className="p-4 md:p-6 text-center">
                 <div className="text-3xl font-bold text-yellow-400 mb-3">1</div>
@@ -162,7 +162,7 @@ export default function CalculatorPage() {
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-8 text-center">
             Skibi Defense Trading Tips
           </h2>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-5xl mx-auto space-y-4">
             <Card className="bg-card border-border">
               <CardContent className="p-4 md:p-6">
                 <h3 className="font-semibold text-foreground mb-2">
@@ -202,7 +202,7 @@ export default function CalculatorPage() {
 
       {/* SEO Content */}
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">
             About the Skibi Defense Trade Calculator
           </h2>

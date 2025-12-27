@@ -115,7 +115,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
       {/* Search & Results */}
       <section className="container mx-auto px-4 py-8 md:py-12">
-        <UnitList units={units} initialSearch={q} />
+        <div className="max-w-5xl mx-auto">
+          <UnitList units={units} initialSearch={q} />
+        </div>
       </section>
 
       {/* Trending Units */}

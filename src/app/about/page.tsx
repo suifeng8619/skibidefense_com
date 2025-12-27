@@ -58,7 +58,7 @@ export default function AboutPage() {
 
       {/* Stats */}
       <section className="container mx-auto px-4 -mt-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
           <Card className="bg-card border-border">
             <CardContent className="p-4 text-center">
               <div className="text-2xl md:text-3xl font-bold text-yellow-400">{units.length}</div>
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
       {/* Mission */}
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-bold text-foreground mb-6 text-center">Our Mission</h2>
           <div className="text-muted-foreground space-y-4">
             <p>
@@ -197,7 +197,7 @@ export default function AboutPage() {
 
       {/* Disclaimer */}
       <section className="container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-xl font-bold text-foreground mb-4">Disclaimer</h2>
           <div className="text-sm text-muted-foreground space-y-3 bg-card/50 p-6 rounded-lg border border-border">
             <p>

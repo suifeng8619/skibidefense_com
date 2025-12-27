@@ -389,7 +389,9 @@ export default async function GamePage({ params }: GamePageProps) {
 
       {/* Unit List */}
       <section className="container mx-auto px-4 py-8">
-        <UnitList units={units} />
+        <div className="max-w-5xl mx-auto">
+          <UnitList units={units} />
+        </div>
       </section>
 
       {/* Game Features */}

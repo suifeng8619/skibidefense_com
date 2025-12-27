@@ -69,7 +69,7 @@ export default function CodesPage() {
 
       {/* How to Redeem */}
       <section className="container mx-auto px-4 py-8">
-        <Card className="max-w-2xl mx-auto">
+        <Card className="max-w-5xl mx-auto">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-green-400" />
@@ -99,7 +99,7 @@ export default function CodesPage() {
 
       {/* Active Codes */}
       <section className="container mx-auto px-4 py-8">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-green-500" />
             Active Skibi Defense Codes ({activeCodes.length})
@@ -129,7 +129,7 @@ export default function CodesPage() {
       {/* Expired Codes */}
       {expiredCodes.length > 0 && (
         <section className="container mx-auto px-4 py-8">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-gray-500" />
               Expired Skibi Defense Codes ({expiredCodes.length})
@@ -152,7 +152,7 @@ export default function CodesPage() {
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-8 text-center">
             Skibi Defense Codes Tips
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
             <Card className="bg-card border-border">
               <CardContent className="p-4 md:p-6">
                 <h3 className="font-semibold text-foreground mb-2">Check Regularly</h3>
@@ -186,7 +186,7 @@ export default function CodesPage() {
 
       {/* SEO Content */}
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">
             About Skibi Defense Codes
           </h2>

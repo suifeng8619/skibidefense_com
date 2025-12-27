@@ -295,8 +295,10 @@ export default async function RarityPage({ params }: RarityPageProps) {
 
       {/* Unit List */}
       <section className="container mx-auto px-4 py-8 md:py-12">
-        <h2 className="text-lg font-bold text-foreground mb-4">All {rarity} Units</h2>
-        <UnitList units={units} />
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-lg font-bold text-foreground mb-4">All {rarity} Units</h2>
+          <UnitList units={units} />
+        </div>
       </section>
 
       {/* SEO Content */}

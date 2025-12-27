@@ -2,10 +2,11 @@ import { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import { UnitList } from "@/components/unit-list";
-import { getUnits } from "@/lib/units";
+import { UnitImage } from "@/components/unit-image";
+import { getUnits, formatValue, getRarityColor } from "@/lib/units";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Shield, Calculator, Gift, Users, Star, Clock } from "lucide-react";
+import { TrendingUp, Shield, Calculator, Gift, Users, Star, Clock, Flame, Trophy, Sparkles, BookOpen, Search, Gamepad2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Skibi Defense Hub - Wiki, Calculator & Game Guides",
@@ -51,6 +52,24 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const ttdUnits = units.filter(u => u.game === "toilet-tower-defense");
   const diamondUnits = units.filter(u => u.rarity === "Diamond");
   const godlyUnits = units.filter(u => u.rarity === "Godly");
+
+  // Get trending units (Rising trend, sorted by value)
+  const trendingUnits = units
+    .filter(u => u.trend === "Rising" || u.trend === "Slowly Rising")
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 6);
+
+  // Get most valuable units
+  const topValueUnits = units
+    .filter(u => u.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 6);
+
+  // Get high demand units
+  const highDemandUnits = units
+    .filter(u => u.demand === "Very High" && u.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 6);
 
   // FAQ Schema for rich snippets
   const faqSchema = JSON.stringify({
@@ -162,6 +181,168 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                 <Gift className="h-5 w-5" />
                 Skibi Defense Codes
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Tools Section */}
+      <section className="container mx-auto px-4 py-8 md:py-12">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-xl md:text-2xl font-bold text-foreground text-center mb-8">
+            Skibi Defense Quick Tools
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Link href="/calculator">
+              <Card className="bg-card border-border hover:border-yellow-500/50 transition-colors h-full">
+                <CardContent className="p-4 text-center">
+                  <Calculator className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
+                  <h3 className="font-semibold text-sm">Skibi Defense Trade Calculator</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Check fair Skibi Defense trades</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/codes">
+              <Card className="bg-card border-border hover:border-green-500/50 transition-colors h-full">
+                <CardContent className="p-4 text-center">
+                  <Gift className="h-8 w-8 text-green-400 mx-auto mb-2" />
+                  <h3 className="font-semibold text-sm">Skibi Defense Codes</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Free Skibi Defense gems</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/search">
+              <Card className="bg-card border-border hover:border-blue-500/50 transition-colors h-full">
+                <CardContent className="p-4 text-center">
+                  <Search className="h-8 w-8 text-blue-400 mx-auto mb-2" />
+                  <h3 className="font-semibold text-sm">Skibi Defense Unit Search</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Find any Skibi Defense unit</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/rarity">
+              <Card className="bg-card border-border hover:border-purple-500/50 transition-colors h-full">
+                <CardContent className="p-4 text-center">
+                  <Star className="h-8 w-8 text-purple-400 mx-auto mb-2" />
+                  <h3 className="font-semibold text-sm">Skibi Defense Rarity Guide</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Browse by Skibi Defense rarity</p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Value Units Section */}
+      <section className="bg-card/30 py-8 md:py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <Trophy className="h-6 w-6 text-yellow-400" />
+                <h2 className="text-xl md:text-2xl font-bold text-foreground">
+                  Most Valuable Skibi Defense Units
+                </h2>
+              </div>
+              <Link href="/search" className="text-yellow-400 hover:underline text-sm">
+                View all →
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+              {topValueUnits.map((unit) => (
+                <Link key={unit.id} href={`/units/${unit.slug}`}>
+                  <Card className="bg-card border-border hover:border-yellow-500/50 transition-all hover:scale-[1.02]">
+                    <CardContent className="p-3">
+                      <div className="aspect-square relative bg-muted rounded-md overflow-hidden mb-2">
+                        <UnitImage src={unit.image} alt={unit.name} fill className="object-cover" />
+                      </div>
+                      <h3 className="font-medium text-sm truncate">{unit.name}</h3>
+                      <Badge variant="outline" className={`${getRarityColor(unit.rarity)} text-xs mt-1`}>
+                        {unit.rarity}
+                      </Badge>
+                      <p className="text-yellow-400 font-mono text-sm mt-1">{formatValue(unit.value)}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trending Units Section */}
+      <section className="container mx-auto px-4 py-8 md:py-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <Flame className="h-6 w-6 text-orange-400" />
+              <h2 className="text-xl md:text-2xl font-bold text-foreground">
+                Trending Skibi Defense Units
+              </h2>
+            </div>
+            <Link href="/search" className="text-yellow-400 hover:underline text-sm">
+              View all →
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+            {trendingUnits.map((unit) => (
+              <Link key={unit.id} href={`/units/${unit.slug}`}>
+                <Card className="bg-card border-border hover:border-orange-500/50 transition-all hover:scale-[1.02]">
+                  <CardContent className="p-3">
+                    <div className="aspect-square relative bg-muted rounded-md overflow-hidden mb-2">
+                      <UnitImage src={unit.image} alt={unit.name} fill className="object-cover" />
+                      <div className="absolute top-1 right-1 bg-green-500 text-white text-xs px-1 rounded flex items-center gap-0.5">
+                        <TrendingUp className="h-3 w-3" /> Rising
+                      </div>
+                    </div>
+                    <h3 className="font-medium text-sm truncate">{unit.name}</h3>
+                    <Badge variant="outline" className={`${getRarityColor(unit.rarity)} text-xs mt-1`}>
+                      {unit.rarity}
+                    </Badge>
+                    <p className="text-yellow-400 font-mono text-sm mt-1">{formatValue(unit.value)}</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* High Demand Units Section */}
+      <section className="bg-card/30 py-8 md:py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <Sparkles className="h-6 w-6 text-pink-400" />
+                <h2 className="text-xl md:text-2xl font-bold text-foreground">
+                  High Demand Skibi Defense Units
+                </h2>
+              </div>
+              <Link href="/search" className="text-yellow-400 hover:underline text-sm">
+                View all →
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+              {highDemandUnits.map((unit) => (
+                <Link key={unit.id} href={`/units/${unit.slug}`}>
+                  <Card className="bg-card border-border hover:border-pink-500/50 transition-all hover:scale-[1.02]">
+                    <CardContent className="p-3">
+                      <div className="aspect-square relative bg-muted rounded-md overflow-hidden mb-2">
+                        <UnitImage src={unit.image} alt={unit.name} fill className="object-cover" />
+                        <div className="absolute top-1 right-1 bg-pink-500 text-white text-xs px-1 rounded">
+                          Hot
+                        </div>
+                      </div>
+                      <h3 className="font-medium text-sm truncate">{unit.name}</h3>
+                      <Badge variant="outline" className={`${getRarityColor(unit.rarity)} text-xs mt-1`}>
+                        {unit.rarity}
+                      </Badge>
+                      <p className="text-yellow-400 font-mono text-sm mt-1">{formatValue(unit.value)}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

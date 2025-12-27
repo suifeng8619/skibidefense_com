@@ -444,7 +444,7 @@ export default async function UnitPage({ params }: UnitPageProps) {
           )}
 
           {/* SEO Content */}
-          <section className="mt-12 md:mt-16 max-w-3xl">
+          <section className="mt-12 md:mt-16 max-w-5xl">
             <h2 className="text-lg md:text-xl font-bold text-foreground mb-4">
               About {unit.name} in Skibi Defense
             </h2>
