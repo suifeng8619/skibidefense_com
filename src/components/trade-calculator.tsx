@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Plus, X, ArrowLeftRight } from "lucide-react";
+import { Plus, X, ArrowLeftRight, CheckCircle, XCircle, Equal, HelpCircle } from "lucide-react";
 import { UnitImage } from "@/components/unit-image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -41,15 +41,35 @@ export function TradeCalculator({ units }: TradeCalculatorProps) {
 
   const getVerdict = () => {
     if (yourTotal === 0 && theirTotal === 0) {
-      return { text: "Add units to compare", color: "text-muted-foreground", bg: "bg-muted" };
+      return {
+        text: "Add units to compare",
+        color: "text-muted-foreground",
+        bg: "bg-muted",
+        icon: HelpCircle
+      };
     }
     if (percentDiff < 10) {
-      return { text: "FAIR TRADE", color: "text-gray-400", bg: "bg-gray-500/20" };
+      return {
+        text: "FAIR TRADE",
+        color: "text-gray-400",
+        bg: "bg-gray-500/20",
+        icon: Equal
+      };
     }
     if (difference > 0) {
-      return { text: "YOU WIN", color: "text-green-400", bg: "bg-green-500/20" };
+      return {
+        text: "YOU WIN",
+        color: "text-green-400",
+        bg: "bg-green-500/20",
+        icon: CheckCircle
+      };
     }
-    return { text: "YOU LOSE", color: "text-red-400", bg: "bg-red-500/20" };
+    return {
+      text: "YOU LOSE",
+      color: "text-red-400",
+      bg: "bg-red-500/20",
+      icon: XCircle
+    };
   };
 
   const verdict = getVerdict();
@@ -135,6 +155,7 @@ export function TradeCalculator({ units }: TradeCalculatorProps) {
               size="icon"
               className="h-8 w-8 text-muted-foreground hover:text-red-400"
               onClick={() => removeUnit(item.instanceId, column)}
+              aria-label={`Remove ${item.unit.name}`}
             >
               <X className="h-4 w-4" />
             </Button>
@@ -157,8 +178,9 @@ export function TradeCalculator({ units }: TradeCalculatorProps) {
       {/* Verdict Display */}
       <Card className={`${verdict.bg} border-none`}>
         <CardContent className="py-6 text-center">
-          <div className={`text-3xl font-bold ${verdict.color}`}>
-            {verdict.text}
+          <div className={`text-3xl font-bold ${verdict.color} flex items-center justify-center gap-3`}>
+            <verdict.icon className="h-8 w-8" aria-hidden="true" />
+            <span>{verdict.text}</span>
           </div>
           {(yourTotal > 0 || theirTotal > 0) && (
             <div className="mt-2 text-muted-foreground">

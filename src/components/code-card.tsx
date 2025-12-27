@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, AlertCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -16,17 +16,42 @@ interface CodeCardProps {
   codeData: Code;
 }
 
+type CopyStatus = "idle" | "success" | "error";
+
 export function CodeCard({ codeData }: CodeCardProps) {
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<CopyStatus>("idle");
   const isActive = codeData.status === "active";
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(codeData.code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setCopyStatus("success");
+      setTimeout(() => setCopyStatus("idle"), 3000);
     } catch {
-      // Clipboard API not available
+      setCopyStatus("error");
+      setTimeout(() => setCopyStatus("idle"), 3000);
+    }
+  };
+
+  const getCopyIcon = () => {
+    switch (copyStatus) {
+      case "success":
+        return <Check className="h-4 w-4 text-green-400" />;
+      case "error":
+        return <AlertCircle className="h-4 w-4 text-red-400" />;
+      default:
+        return <Copy className="h-4 w-4 text-muted-foreground" />;
+    }
+  };
+
+  const getCopyLabel = () => {
+    switch (copyStatus) {
+      case "success":
+        return "Copied!";
+      case "error":
+        return "Copy failed";
+      default:
+        return `Copy code ${codeData.code}`;
     }
   };
 
@@ -53,14 +78,16 @@ export function CodeCard({ codeData }: CodeCardProps) {
           </div>
           {isActive && (
             <button
-              className="p-2 hover:bg-accent rounded-md transition-colors"
+              className="p-2 hover:bg-accent rounded-md transition-colors flex items-center gap-1"
               onClick={handleCopy}
-              title="Copy code"
+              aria-label={getCopyLabel()}
+              title={getCopyLabel()}
             >
-              {copied ? (
-                <Check className="h-4 w-4 text-green-400" />
-              ) : (
-                <Copy className="h-4 w-4 text-muted-foreground" />
+              {getCopyIcon()}
+              {copyStatus !== "idle" && (
+                <span className={`text-xs ${copyStatus === "success" ? "text-green-400" : "text-red-400"}`}>
+                  {copyStatus === "success" ? "Copied!" : "Failed"}
+                </span>
               )}
             </button>
           )}

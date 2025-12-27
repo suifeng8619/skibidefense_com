@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import { UnitList } from "@/components/unit-list";
 import { getUnits } from "@/lib/units";
@@ -36,7 +37,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+interface HomePageProps {
+  searchParams: Promise<{ search?: string }>;
+}
+
+export default async function HomePage({ searchParams }: HomePageProps) {
+  const { search } = await searchParams;
   const units = getUnits();
   const currentYear = new Date().getFullYear();
 
@@ -46,8 +52,56 @@ export default function HomePage() {
   const diamondUnits = units.filter(u => u.rarity === "Diamond");
   const godlyUnits = units.filter(u => u.rarity === "Godly");
 
+  // FAQ Schema for rich snippets
+  const faqSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often is the Skibi Defense value list updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our Skibi Defense value list is updated daily based on current trading data. Skibi Defense unit prices reflect the latest market trends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I use the Skibi Defense trade calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add Skibi Defense units to both sides of the calculator. It will show if the Skibi Defense trade is fair, a win, or a loss for you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes Skibi Defense units valuable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skibi Defense unit value depends on rarity, demand, and availability. Limited Skibi Defense event units and low-exist counts increase value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Skibi Defense codes still working?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We maintain an updated list of working Skibi Defense codes. Check our Skibi Defense codes page for active codes and free rewards."
+        }
+      }
+    ]
+  });
+
   return (
-    <div className="min-h-screen">
+    <>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {faqSchema}
+      </Script>
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-yellow-500/10 via-background to-background py-12 md:py-16">
         <div className="container mx-auto px-4">
@@ -125,7 +179,7 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-        <UnitList units={units} />
+        <UnitList units={units} initialSearch={search} />
       </section>
 
       {/* Features Section */}
@@ -445,6 +499,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

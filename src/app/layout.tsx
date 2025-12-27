@@ -76,6 +76,36 @@ export default function RootLayout({
           src="https://stats.toolifybox.com/js/script.file-downloads.outbound-links.js"
           strategy="afterInteractive"
         />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {`{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Skibi Defense Value List",
+            "url": "https://skibidefense.com",
+            "description": "The most accurate Skibi Defense value list and trade calculator for Roblox players.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://skibidefense.com/?search={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }`}
+        </Script>
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {`{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "SkibiValues",
+            "url": "https://skibidefense.com"
+          }`}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}

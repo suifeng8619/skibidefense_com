@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, TrendingUp, TrendingDown, Minus, Sparkles, Users, Zap, Tag } from "lucide-react";
@@ -77,8 +78,41 @@ export default async function UnitPage({ params }: UnitPageProps) {
       : Minus;
   const gameName = unit.game === "skibi-defense" ? "Skibi Defense" : "Toilet Tower Defense";
 
+  // Generate Product Schema JSON-LD
+  const productSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": unit.name,
+    "description": `${unit.name} is a ${unit.rarity} rarity unit in Skibi Defense worth ${formatValue(unit.value)} Gems.`,
+    "image": unit.image.startsWith("http") ? unit.image : `https://skibidefense.com${unit.image}`,
+    "brand": {
+      "@type": "Brand",
+      "name": gameName
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": unit.value,
+      "priceCurrency": "GEMS",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": unit.demandScore ? {
+      "@type": "AggregateRating",
+      "ratingValue": unit.demandScore,
+      "bestRating": 10,
+      "worstRating": 1
+    } : undefined
+  });
+
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
+      <Script
+        id={`product-schema-${unit.slug}`}
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {productSchema}
+      </Script>
+      <div className="container mx-auto px-4 py-8">
       {/* Back Button */}
       <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" />
@@ -285,6 +319,7 @@ export default async function UnitPage({ params }: UnitPageProps) {
           </p>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
