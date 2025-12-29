@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Skibi Defense Hub - Wiki, Calculator & Game Guides",
     description:
       "Your complete Skibi Defense resource hub. Wiki, trade calculator, codes, and expert guides for Roblox players.",
-    url: "https://skibidefense.com",
+    url: "https://skibidefense.com/",
   },
   twitter: {
     title: "Skibi Defense Hub - Wiki, Calculator & Game Guides",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Your complete Skibi Defense resource hub. Wiki, trade calculator, codes, and expert guides for Roblox players.",
   },
   alternates: {
-    canonical: "https://skibidefense.com",
+    canonical: "https://skibidefense.com/",
   },
 };
 

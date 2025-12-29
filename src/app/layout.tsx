@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://skibidefense.com",
+    url: "https://skibidefense.com/",
     siteName: "Skibi Defense Value List",
     title: "Skibi Defense Value List & Trade Calculator 2025",
     description:
