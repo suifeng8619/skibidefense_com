@@ -6,6 +6,17 @@ module.exports = {
   outDir: './public',
   changefreq: 'daily',
   priority: 0.7,
+  // Exclude search page from sitemap (dynamic content, potential duplicate issues)
+  exclude: ['/search'],
+  // Ensure homepage is included
+  additionalPaths: async (config) => [
+    {
+      loc: '/',
+      changefreq: 'daily',
+      priority: 1.0,
+      lastmod: new Date().toISOString(),
+    },
+  ],
   robotsTxtOptions: {
     policies: [
       {

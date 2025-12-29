@@ -8,24 +8,17 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Search Skibi Defense Units - Find Unit Values & Stats",
+  title: "Search Units - Find Values & Stats",
   description:
-    "Search all Skibi Defense units by name, rarity, or traits. Find exact unit values, demand scores, and trading information instantly. Browse 147+ units across all rarities.",
-  keywords: [
-    "Skibi Defense search",
-    "find Skibi Defense units",
-    "Skibi Defense unit lookup",
-    "Skibi Defense value search",
-    "Skibi Defense unit finder",
-    "search Skibi Defense prices",
-  ],
-  openGraph: {
-    title: "Search Skibi Defense Units",
-    description: "Find any Skibi Defense unit instantly with our powerful search.",
-    url: "https://skibidefense.com/search",
+    "Search all units by name, rarity, or traits. Find exact unit values, demand scores, and trading information instantly.",
+  robots: {
+    index: false,
+    follow: true,
   },
-  alternates: {
-    canonical: "https://skibidefense.com/search",
+  openGraph: {
+    title: "Search Units",
+    description: "Find any unit instantly with our powerful search.",
+    url: "https://skibidefense.com/search",
   },
 };
 
